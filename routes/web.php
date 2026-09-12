@@ -17,7 +17,7 @@ use App\Http\Controllers\Siswa\KarakterController as SiswaKarakterController;
 use App\Http\Controllers\Siswa\NilaiController as SiswaNilaiController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn() => redirect()->route('login'));
+Route::view('/', 'welcome');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
