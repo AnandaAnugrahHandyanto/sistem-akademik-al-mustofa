@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\SiswaController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Guru\HafalanController as GuruHafalanController;
+use App\Http\Controllers\Guru\KarakterController as GuruKarakterController;
 use App\Http\Controllers\Guru\NilaiController as GuruNilaiController;
 use App\Http\Controllers\Ortu\NilaiController as OrtuNilaiController;
 use App\Http\Controllers\Siswa\NilaiController as SiswaNilaiController;
@@ -32,7 +34,8 @@ Route::middleware(['auth', 'no-cache'])->group(function () {
 
     Route::middleware('role:guru')->prefix('guru')->name('guru.')->group(function () {
         Route::resource('nilai', GuruNilaiController::class);
-        Route::view('/hafalan', 'dashboard.guru')->name('hafalan');
+        Route::resource('hafalan', GuruHafalanController::class);
+        Route::resource('karakter', GuruKarakterController::class);
     });
     Route::middleware('role:ortu')->prefix('ortu')->name('ortu.')->group(function () {
         Route::get('/nilai', [OrtuNilaiController::class, 'index'])->name('nilai.index');

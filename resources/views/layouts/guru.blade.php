@@ -10,7 +10,7 @@
 <div class="container">
 <a class="navbar-brand" href="{{ route('dashboard') }}">Al-Mustofa Guru</a>
 <div class="navbar-nav">
-<a class="nav-link" href="{{ route('guru.nilai.index') }}">Nilai</a><a class="nav-link" href="{{ route('guru.hafalan') }}">Hafalan</a>
+<a class="nav-link" href="{{ route('guru.nilai.index') }}">Nilai</a><a class="nav-link" href="{{ route('guru.hafalan.index') }}">Hafalan</a><a class="nav-link" href="{{ route('guru.karakter.index') }}">Karakter</a>
 </div>
 <div class="ms-auto d-flex align-items-center gap-2">
 <span class="text-white small">{{ auth()->user()->username }} ({{ auth()->user()->role }})</span>
