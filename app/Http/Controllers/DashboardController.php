@@ -7,12 +7,11 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $role = Auth::user()->role;
-        return match($role) {
-            'admin' => view('dashboard.admin'),
-            'guru' => view('dashboard.guru'),
-            'ortu' => view('dashboard.ortu'),
-            'siswa' => view('dashboard.siswa'),
+        return match (Auth::user()->role) {
+            'admin' => redirect()->route('admin.siswa.index'),
+            'guru'  => redirect()->route('guru.nilai.index'),
+            'ortu'  => redirect()->route('ortu.nilai.index'),
+            'siswa' => redirect()->route('siswa.nilai.index'),
             default => abort(403),
         };
     }
