@@ -11,6 +11,7 @@ body{font-family:'Inter','Poppins',sans-serif;background:#f8f9fa;}
 .sidebar{width:260px;height:100vh;background:#16a34a;color:#ffffff;position:sticky;top:0;flex-shrink:0;display:flex;flex-direction:column;}
 .sidebar .nav-link{color:#ffffff;opacity:.85;font-weight:500;font-size:.92rem;}
 .sidebar .nav-link:hover{background:rgba(255,255,255,.18);color:#ffffff;opacity:1;}
+.sidebar .nav-link i{font-size:1rem;line-height:1;vertical-align:middle;flex-shrink:0;}
 .sidebar .nav-link.active{background:rgba(255,255,255,.28);color:#ffffff;font-weight:600;}
 .sidebar .logo{border-bottom:1px solid rgba(255,255,255,.22);padding-bottom:1rem;flex-shrink:0;}
 .sidebar-menu{flex:1 1 auto;overflow-y:auto;min-height:0;}
@@ -39,8 +40,8 @@ body{font-family:'Inter','Poppins',sans-serif;background:#f8f9fa;}
 <small style="opacity:.8;">Guru</small>
 </div>
 <nav class="nav flex-column gap-1 sidebar-menu" id="sidebar-menu">
-<a href="{{ route('guru.nilai.index') }}" class="nav-link d-flex align-items-center gap-2 px-3 py-2 rounded {{ request()->routeIs('guru.nilai.*') ? 'active' : '' }}" onclick="closeSidebarIfMobile()"><i class="bi bi-123"></i> Nilai</a>
-<a href="{{ route('guru.hafalan.index') }}" class="nav-link d-flex align-items-center gap-2 px-3 py-2 rounded {{ request()->routeIs('guru.hafalan.*') ? 'active' : '' }}" onclick="closeSidebarIfMobile()"><i class="bi bi-book"></i> Hafalan</a>
+<a href="{{ route('guru.nilai.index') }}" class="nav-link d-flex align-items-center gap-2 px-3 py-2 rounded {{ request()->routeIs('guru.nilai.*') ? 'active' : '' }}" onclick="closeSidebarIfMobile()"><i class="bi bi-clipboard-data"></i> Nilai</a>
+<a href="{{ route('guru.hafalan.index') }}" class="nav-link d-flex align-items-center gap-2 px-3 py-2 rounded {{ request()->routeIs('guru.hafalan.*') ? 'active' : '' }}" onclick="closeSidebarIfMobile()"><i class="bi bi-book-half"></i> Hafalan</a>
 <a href="{{ route('guru.karakter.index') }}" class="nav-link d-flex align-items-center gap-2 px-3 py-2 rounded {{ request()->routeIs('guru.karakter.*') ? 'active' : '' }}" onclick="closeSidebarIfMobile()"><i class="bi bi-heart"></i> Karakter</a>
 </nav>
 <div class="sidebar-footer">
