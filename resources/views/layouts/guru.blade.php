@@ -56,6 +56,7 @@ body{font-family:'Inter','Poppins',sans-serif;background:#f8f9fa;}
 <main class="flex-grow-1 main">
 <nav class="d-md-none bg-white border-bottom p-2 d-flex align-items-center"><button class="btn btn-outline-secondary btn-sm" onclick="openSidebar()"><i class="bi bi-list"></i></button><span class="ms-2 fw-semibold">Guru</span></nav>
 <div class="p-4" style="max-width:1100px;">
+@include('partials.breadcrumbs')
 @if(session('ok'))<div class="alert alert-success d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill"></i> {{ session('ok') }}</div>@endif
 @yield('content')
 </div>
