@@ -15,7 +15,7 @@ class AuthController extends Controller
         ]);
         if (Auth::attempt(['username' => $cred['username'], 'password' => $cred['password']], $request->boolean('remember'))) {
             $request->session()->regenerate();
-            return redirect()->intended(route('dashboard'));
+            return redirect()->route('dashboard');
         }
         return back()->withErrors(['username' => 'Username atau password salah'])->onlyInput('username');
     }
@@ -25,6 +25,11 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('login');
+        
+        return redirect()->route('login')
+            ->withHeaders([
+                'Cache-Control' => 'no-store, no-cache, must-revalidate',
+                'Pragma' => 'no-cache',
+            ]);
     }
 }

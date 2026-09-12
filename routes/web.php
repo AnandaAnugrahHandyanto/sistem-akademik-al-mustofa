@@ -10,14 +10,14 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'no-cache'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::middleware('role:admin')->group(function () {
-        Route::view('/admin/siswa', 'dashboard.admin')->name('admin.siswa');
-        Route::view('/admin/guru', 'dashboard.admin')->name('admin.guru');
-        Route::view('/admin/kelas', 'dashboard.admin')->name('admin.kelas');
+    Route::middleware('role:admin')->prefix('admin')->group(function () {
+        Route::view('/siswa', 'dashboard.admin')->name('admin.siswa');
+        Route::view('/guru', 'dashboard.admin')->name('admin.guru');
+        Route::view('/kelas', 'dashboard.admin')->name('admin.kelas');
     });
     Route::middleware('role:guru')->group(function () {
         Route::view('/guru/nilai', 'dashboard.guru')->name('guru.nilai');
