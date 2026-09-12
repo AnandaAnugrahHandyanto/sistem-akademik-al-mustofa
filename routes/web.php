@@ -9,7 +9,11 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Guru\HafalanController as GuruHafalanController;
 use App\Http\Controllers\Guru\KarakterController as GuruKarakterController;
 use App\Http\Controllers\Guru\NilaiController as GuruNilaiController;
+use App\Http\Controllers\Ortu\HafalanController as OrtuHafalanController;
+use App\Http\Controllers\Ortu\KarakterController as OrtuKarakterController;
 use App\Http\Controllers\Ortu\NilaiController as OrtuNilaiController;
+use App\Http\Controllers\Siswa\HafalanController as SiswaHafalanController;
+use App\Http\Controllers\Siswa\KarakterController as SiswaKarakterController;
 use App\Http\Controllers\Siswa\NilaiController as SiswaNilaiController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,8 +43,12 @@ Route::middleware(['auth', 'no-cache'])->group(function () {
     });
     Route::middleware('role:ortu')->prefix('ortu')->name('ortu.')->group(function () {
         Route::get('/nilai', [OrtuNilaiController::class, 'index'])->name('nilai.index');
+        Route::get('/hafalan', [OrtuHafalanController::class, 'index'])->name('hafalan.index');
+        Route::get('/karakter', [OrtuKarakterController::class, 'index'])->name('karakter.index');
     });
     Route::middleware('role:siswa')->prefix('siswa')->name('siswa.')->group(function () {
         Route::get('/nilai', [SiswaNilaiController::class, 'index'])->name('nilai.index');
+        Route::get('/hafalan', [SiswaHafalanController::class, 'index'])->name('hafalan.index');
+        Route::get('/karakter', [SiswaKarakterController::class, 'index'])->name('karakter.index');
     });
 });
