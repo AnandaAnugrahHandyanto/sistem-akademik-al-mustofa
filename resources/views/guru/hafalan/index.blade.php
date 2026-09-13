@@ -10,7 +10,7 @@
 </div></div>
 <div class="card"><div class="card-body p-0"><div class="table-responsive">
 <table class="table table-hover align-middle mb-0">
-<thead><tr><th class="ps-3">Siswa</th><th>Jenis</th><th>Surat</th><th style="min-width:140px">Progress</th><th>Audio</th><th>Tanggal</th><th class="text-end pe-3">Aksi</th></tr></thead>
+<thead><tr><th class="ps-3 text-nowrap" style="min-width:150px">Siswa</th><th class="text-nowrap" style="min-width:100px">Jenis</th><th class="text-nowrap" style="min-width:120px">Surat</th><th style="min-width:140px" class="text-nowrap">Progress</th><th class="text-nowrap" style="min-width:80px">Audio</th><th class="text-nowrap" style="min-width:110px">Tanggal</th><th class="text-end pe-3 text-nowrap" style="min-width:110px">Aksi</th></tr></thead>
 <tbody>
 @forelse($data as $r)
 <tr><td class="ps-3 fw-medium text-nowrap">{{ $r->siswa->nama_lengkap }} <small class="text-muted">({{ $r->siswa->kelas }})</small></td><td><span class="badge bg-light text-dark border">{{ $r->jenis_hafalan }}</span></td><td>{{ $r->surat }}</td><td><div class="progress" style="height:18px"><div class="progress-bar bg-success" style="width:{{ $r->progress }}%">{{ $r->progress }}%</div></div></td><td>@if($r->audio)<a href="{{ Storage::url($r->audio) }}" target="_blank" class="btn btn-sm btn-outline-success"><i class="bi bi-play-circle me-1"></i>Play</a>@else<span class="text-muted">-</span>@endif</td><td class="small text-muted">{{ $r->tanggal }}</td>

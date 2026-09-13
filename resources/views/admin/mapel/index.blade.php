@@ -3,7 +3,7 @@
 <div class="d-flex justify-content-between align-items-center mb-3"><h4 class="fw-semibold mb-0" style="font-family:'Poppins',sans-serif;">Mata Pelajaran</h4><a href="{{ route('admin.mapel.create') }}" class="btn btn-warning text-white btn-sm"><i class="bi bi-plus-lg me-1"></i> Tambah</a></div>
 <div class="card"><div class="card-body p-0"><div class="table-responsive">
 <table class="table table-hover align-middle mb-0">
-<thead><tr><th class="ps-3">Nama</th><th>Guru Pengampu</th><th class="text-end pe-3">Aksi</th></tr></thead>
+<thead><tr><th class="ps-3 text-nowrap" style="min-width:150px">Nama</th><th class="text-nowrap" style="min-width:150px">Guru Pengampu</th><th class="text-end pe-3 text-nowrap" style="min-width:110px">Aksi</th></tr></thead>
 <tbody>
 @forelse($data as $r)
 <tr><td class="ps-3 fw-medium text-nowrap">{{ $r->nama }}</td><td class="text-nowrap">{{ $r->guru?->nama_lengkap ?? '-' }}</td>

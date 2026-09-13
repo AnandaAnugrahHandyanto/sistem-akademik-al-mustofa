@@ -8,7 +8,7 @@
 <div class="card-body p-0">
 <div class="table-responsive">
 <table class="table table-hover align-middle mb-0">
-<thead><tr><th class="ps-3">NIS</th><th>Nama Lengkap</th><th>Kelas</th><th>Rombel</th><th>Jenis Kelamin</th><th class="text-end pe-3">Aksi</th></tr></thead>
+<thead><tr><th class="ps-3 text-nowrap" style="min-width:100px">NIS</th><th class="text-nowrap" style="min-width:180px">Nama Lengkap</th><th class="text-nowrap" style="min-width:80px">Kelas</th><th class="text-nowrap" style="min-width:80px">Rombel</th><th class="text-nowrap" style="min-width:120px">Jenis Kelamin</th><th class="text-end pe-3 text-nowrap" style="min-width:110px">Aksi</th></tr></thead>
 <tbody>
 @forelse($data as $r)
 <tr><td class="ps-3 fw-medium">{{ $r->nis }}</td><td class="text-nowrap">{{ $r->nama_lengkap }}</td><td><span class="badge bg-light text-dark border">{{ $r->kelas }}</span></td><td>{{ $r->rombel }}</td><td>{{ $r->jenis_kelamin=='L' ? 'Laki-laki' : 'Perempuan' }}</td>

@@ -6,7 +6,7 @@
 </div>
 <div class="card"><div class="card-body p-0"><div class="table-responsive">
 <table class="table table-hover align-middle mb-0">
-<thead><tr><th class="ps-3">Siswa</th><th>Mata Pelajaran</th><th>Angka</th><th>Huruf</th><th>Semester</th><th class="text-end pe-3">Aksi</th></tr></thead>
+<thead><tr><th class="ps-3 text-nowrap" style="min-width:150px">Siswa</th><th class="text-nowrap" style="min-width:150px">Mata Pelajaran</th><th class="text-nowrap" style="min-width:70px">Angka</th><th class="text-nowrap" style="min-width:70px">Huruf</th><th class="text-nowrap" style="min-width:90px">Semester</th><th class="text-end pe-3 text-nowrap" style="min-width:110px">Aksi</th></tr></thead>
 <tbody>
 @forelse($data as $r)
 <tr><td class="ps-3 fw-medium text-nowrap">{{ $r->siswa->nama_lengkap }}</td><td>{{ $r->mataPelajaran->nama }}</td><td><span class="badge bg-light text-dark border">{{ $r->nilai_angka }}</span></td><td><span class="badge bg-success">{{ $r->nilai_huruf }}</span></td><td><span class="badge bg-light text-dark border">{{ $r->semester }}</span></td>

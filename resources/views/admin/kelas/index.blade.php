@@ -3,7 +3,7 @@
 <div class="d-flex justify-content-between align-items-center mb-3"><h4 class="fw-semibold mb-0" style="font-family:'Poppins',sans-serif;">Data Kelas</h4><a href="{{ route('admin.kelas.create') }}" class="btn btn-warning text-white btn-sm"><i class="bi bi-plus-lg me-1"></i> Tambah</a></div>
 <div class="card"><div class="card-body p-0"><div class="table-responsive">
 <table class="table table-hover align-middle mb-0">
-<thead><tr><th class="ps-3">Nama Kelas</th><th>Tingkat</th><th>Rombel</th><th class="text-end pe-3">Aksi</th></tr></thead>
+<thead><tr><th class="ps-3 text-nowrap" style="min-width:140px">Nama Kelas</th><th class="text-nowrap" style="min-width:80px">Tingkat</th><th class="text-nowrap" style="min-width:80px">Rombel</th><th class="text-end pe-3 text-nowrap" style="min-width:110px">Aksi</th></tr></thead>
 <tbody>
 @forelse($data as $r)
 <tr><td class="ps-3 fw-medium text-nowrap">{{ $r->nama_kelas }}</td><td><span class="badge bg-light text-dark border">{{ $r->tingkat }}</span></td><td>{{ $r->rombel }}</td>
