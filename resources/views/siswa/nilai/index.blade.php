@@ -6,7 +6,7 @@
 <thead><tr><th class="ps-3">Mata Pelajaran</th><th>Angka</th><th>Huruf</th><th>Semester</th></tr></thead>
 <tbody>
 @forelse($data as $r)
-<tr><td class="ps-3 fw-medium">{{ $r->mataPelajaran->nama }}</td><td><span class="badge bg-light text-dark border">{{ $r->nilai_angka }}</span></td><td><span class="badge bg-purple" style="background:#7c3aed;">{{ $r->nilai_huruf }}</span></td><td class="small text-muted">{{ $r->semester }}</td></tr>
+<tr><td class="ps-3 fw-medium text-nowrap">{{ $r->mataPelajaran->nama }}</td><td><span class="badge bg-light text-dark border">{{ $r->nilai_angka }}</span></td><td><span class="badge bg-purple" style="background:#7c3aed;">{{ $r->nilai_huruf }}</span></td><td class="small text-muted">{{ $r->semester }}</td></tr>
 @empty<tr><td colspan="4" class="text-center text-muted py-4">Belum ada data nilai</td></tr>@endforelse
 </tbody></table>
 </div></div>

@@ -13,8 +13,8 @@
 <thead><tr><th class="ps-3">Siswa</th><th>Aspek</th><th>Nilai</th><th>Tanggal</th><th class="text-end pe-3">Aksi</th></tr></thead>
 <tbody>
 @forelse($data as $r)
-<tr><td class="ps-3 fw-medium">{{ $r->siswa->nama_lengkap }} <small class="text-muted">({{ $r->siswa->kelas }})</small></td><td><span class="badge bg-light text-dark border">{{ $r->aspek }}</span></td><td><span class="badge bg-{{ $r->nilai=='A'?'success':($r->nilai=='B'?'primary':($r->nilai=='C'?'warning text-dark':'danger')) }}">{{ $r->nilai }}</span></td><td class="small text-muted">{{ $r->tanggal }}</td>
-<td class="text-end pe-3"><a href="{{ route('guru.karakter.edit',$r) }}" class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil"></i></a><form method="POST" action="{{ route('guru.karakter.destroy',$r) }}" class="d-inline">@csrf @method('DELETE')<button class="btn btn-sm btn-outline-danger" onclick="return confirm('hapus?')"><i class="bi bi-trash"></i></button></form></td></tr>
+<tr><td class="ps-3 fw-medium text-nowrap">{{ $r->siswa->nama_lengkap }} <small class="text-muted">({{ $r->siswa->kelas }})</small></td><td><span class="badge bg-light text-dark border">{{ $r->aspek }}</span></td><td><span class="badge bg-{{ $r->nilai=='A'?'success':($r->nilai=='B'?'primary':($r->nilai=='C'?'warning text-dark':'danger')) }}">{{ $r->nilai }}</span></td><td class="small text-muted">{{ $r->tanggal }}</td>
+<td class="text-nowrap"><div class="d-flex gap-1 justify-content-end"><a href="{{ route('guru.karakter.edit',$r) }}" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil-square"></i></a><form method="POST" action="{{ route('guru.karakter.destroy',$r) }}" class="d-inline">@csrf @method('DELETE')<button class="btn btn-sm btn-outline-danger" onclick="return confirm('hapus?')"><i class="bi bi-trash3"></i></button></form></div></td></tr>
 @empty<tr><td colspan="5" class="text-center text-muted py-4">Belum ada data karakter</td></tr>@endforelse
 </tbody></table>
 </div></div>

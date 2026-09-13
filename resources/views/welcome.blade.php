@@ -8,14 +8,22 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+section[id]{scroll-margin-top:120px}
 *{font-family:'Inter',sans-serif}
 h1,h2,h3,h4{font-family:'Poppins',sans-serif}
 body{display:grid;grid-template-rows:auto 1fr auto;min-height:100dvh}
+.navbar-nav .nav-link.active{color:#f59e0b !important;font-weight:700}
+.navbar-toggler{border:none;box-shadow:none !important}
+.navbar-toggler .bi-list{display:block}
+.navbar-toggler .bi-x-lg{display:none}
+.navbar-toggler[aria-expanded="true"] .bi-list{display:none}
+.navbar-toggler[aria-expanded="true"] .bi-x-lg{display:block}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .fade-in{animation:fadeInUp .6s ease both}
 .fade-in-2{animation:fadeInUp .6s .15s ease both}
 .fade-in-3{animation:fadeInUp .6s .3s ease both}
-.hero{position:relative;background-color:#fef3c7;background-image:url('{{ asset('images/bg-yayasan.jpg') }}'),linear-gradient(135deg,#fef3c7 0%,#fde68a 50%,#fdba74 100%);background-size:cover,cover;background-position:center,center;background-attachment:fixed,fixed}
+.hero{position:relative;background-color:#fef3c7;background-image:url('{{ asset('images/bg-yayasan.jpg') }}'),linear-gradient(135deg,#fef3c7 0%,#fde68a 50%,#fdba74 100%);background-size:cover,cover;background-position:center,center;background-attachment:scroll,scroll}
 .hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.52)}
 .hero> *{position:relative;z-index:1}
 .card-feature{transition:transform .2s,box-shadow .2s;border:none;border-radius:16px}
@@ -31,11 +39,11 @@ body{display:grid;grid-template-rows:auto 1fr auto;min-height:100dvh}
 
 <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top" style="z-index:10;">
 <div class="container">
-<a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#" style="font-family:'Poppins',sans-serif;color:#92400e;">
+<a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#beranda" style="font-family:'Poppins',sans-serif;color:#92400e;">
 <span class="d-flex align-items-center justify-content-center rounded-3" style="width:36px;height:36px;background:#f59e0b;color:#fff;font-size:18px;"><i class="bi bi-mortarboard-fill"></i></span>
 Al-Mustofa
 </a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle"><span class="navbar-toggler-icon"></span></button>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle"><i class="bi bi-list fs-3"></i><i class="bi bi-x-lg fs-3"></i></button>
 <div class="collapse navbar-collapse" id="navMain">
 <ul class="navbar-nav mx-auto gap-lg-2">
 <li class="nav-item"><a class="nav-link fw-medium" href="#beranda">Beranda</a></li>
@@ -60,39 +68,7 @@ Al-Mustofa
 </div>
 </section>
 
-<section id="fitur" class="py-5 bg-white">
-<div class="container">
-<div class="text-center mb-4 fade-in">
-<h2 class="h4 fw-bold" style="color:#1f2937;">Fitur Unggulan</h2>
-<p class="text-muted small">Tiga pilar utama sistem kami</p>
-</div>
-<div class="row g-4">
-<div class="col-12 col-md-4 fade-in">
-<div class="card card-feature h-100 shadow-sm p-4 text-center">
-<div class="icon-box mx-auto mb-3" style="background:#2563eb;"><i class="bi bi-clipboard-data"></i></div>
-<h3 class="h6 fw-bold mb-2" style="color:#1f2937;">Sistem Akademik</h3>
-<p class="small text-muted mb-0">Kelola nilai siswa dengan mudah</p>
-</div>
-</div>
-<div class="col-12 col-md-4 fade-in-2">
-<div class="card card-feature h-100 shadow-sm p-4 text-center">
-<div class="icon-box mx-auto mb-3" style="background:#16a34a;"><i class="bi bi-book-half"></i></div>
-<h3 class="h6 fw-bold mb-2" style="color:#1f2937;">Monitoring Hafalan</h3>
-<p class="small text-muted mb-0">Pantau progress hafalan real-time</p>
-</div>
-</div>
-<div class="col-12 col-md-4 fade-in-3">
-<div class="card card-feature h-100 shadow-sm p-4 text-center">
-<div class="icon-box mx-auto mb-3" style="background:#ec4899;"><i class="bi bi-heart"></i></div>
-<h3 class="h6 fw-bold mb-2" style="color:#1f2937;">Penilaian Karakter</h3>
-<p class="small text-muted mb-0">Nilai 6 aspek karakter siswa</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section id="tentang" class="py-4 bg-light border-top">
+<section id="tentang" class="py-5 bg-light border-top">
 <div class="container">
 <div class="row align-items-center g-4">
 <div class="col-12 col-md-6">
@@ -105,14 +81,46 @@ Al-Mustofa
 </div>
 </div>
 </section>
+
+<section id="fitur" class="py-5 bg-white">
+<div class="container">
+<div class="text-center mb-4">
+<h2 class="h4 fw-bold" style="color:#1f2937;">Fitur Unggulan</h2>
+<p class="text-muted small">Tiga pilar utama sistem kami</p>
+</div>
+<div class="row g-4">
+<div class="col-12 col-md-4">
+<div class="card card-feature h-100 shadow-sm p-4 text-center">
+<div class="icon-box mx-auto mb-3" style="background:#2563eb;"><i class="bi bi-clipboard-data"></i></div>
+<h3 class="h6 fw-bold mb-2" style="color:#1f2937;">Sistem Akademik</h3>
+<p class="small text-muted mb-0">Kelola nilai siswa dengan mudah</p>
+</div>
+</div>
+<div class="col-12 col-md-4">
+<div class="card card-feature h-100 shadow-sm p-4 text-center">
+<div class="icon-box mx-auto mb-3" style="background:#16a34a;"><i class="bi bi-book-half"></i></div>
+<h3 class="h6 fw-bold mb-2" style="color:#1f2937;">Monitoring Hafalan</h3>
+<p class="small text-muted mb-0">Pantau progress hafalan real-time</p>
+</div>
+</div>
+<div class="col-12 col-md-4">
+<div class="card card-feature h-100 shadow-sm p-4 text-center">
+<div class="icon-box mx-auto mb-3" style="background:#ec4899;"><i class="bi bi-heart"></i></div>
+<h3 class="h6 fw-bold mb-2" style="color:#1f2937;">Penilaian Karakter</h3>
+<p class="small text-muted mb-0">Nilai 6 aspek karakter siswa</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 </main>
 
 <footer class="text-white pt-4 pb-3" style="background:#422006;">
 <div class="container">
 <div class="row g-4">
 <div class="col-12 col-md-4">
-<h6 class="fw-bold mb-2" style="font-family:'Poppins',sans-serif;">Tentang Yayasan</h6>
-<p class="small mb-0" style="color:#fde68a;">Yayasan Islam Al-Mustofa — pendidikan Islam terpadu akademik, tahfidz, dan karakter.</p>
+<h6 class="fw-bold mb-2" style="font-family:'Poppins',sans-serif;">Al-Mustofa</h6>
+<p class="small mb-0" style="color:#fde68a;">Sistem Akademik, Monitoring Hafalan, dan Penilaian Karakter.</p>
 </div>
 <div class="col-12 col-md-4">
 <h6 class="fw-bold mb-2">Kontak</h6>
@@ -137,5 +145,30 @@ Al-Mustofa
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.querySelectorAll('.navbar-nav .nav-link').forEach(link=>{
+  link.addEventListener('click',()=>{
+    const c=document.querySelector('.navbar-collapse');
+    if(c && c.classList.contains('show')) new bootstrap.Collapse(c).hide();
+  });
+});
+window.addEventListener('scroll',()=>{
+    const sections=document.querySelectorAll('section[id]');
+    const navLinks=document.querySelectorAll('.navbar-nav .nav-link');
+    const scrollPos=window.scrollY + 100;
+    let current='';
+    sections.forEach(s=>{
+        const sectionTop=s.offsetTop;
+        const sectionHeight=s.offsetHeight;
+        if(scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight){
+            current=s.getAttribute('id');
+        }
+    });
+    navLinks.forEach(l=>{
+        l.classList.remove('active');
+        if(l.getAttribute('href')==='#'+current) l.classList.add('active');
+    });
+});
+</script>
 </body>
 </html>
