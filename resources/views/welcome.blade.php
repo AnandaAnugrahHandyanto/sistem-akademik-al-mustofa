@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Yayasan Islam Al-Mustofa</title>
+<title>SDIT Al-Mustofa</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@ body{display:grid;grid-template-rows:auto 1fr auto;min-height:100dvh}
 <div class="container">
 <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#beranda" style="font-family:'Poppins',sans-serif;color:#92400e;">
 <span class="d-flex align-items-center justify-content-center rounded-3" style="width:36px;height:36px;background:#f59e0b;color:#fff;font-size:18px;"><i class="bi bi-mortarboard-fill"></i></span>
-Al-Mustofa
+SDIT Al-Mustofa
 </a>
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle"><i class="bi bi-list fs-3"></i><i class="bi bi-x-lg fs-3"></i></button>
 <div class="collapse navbar-collapse" id="navMain">
@@ -58,7 +58,7 @@ Al-Mustofa
 <main>
 <section id="beranda" class="hero d-flex align-items-center text-white text-center py-5" style="min-height:52vh;">
 <div class="container py-4">
-<p class="small fw-semibold mb-2 fade-in" style="letter-spacing:.08em;color:#fde68a;">Yayasan Islam Al-Mustofa</p>
+<p class="small fw-semibold mb-2 fade-in" style="letter-spacing:.08em;color:#fde68a;">SDIT Al-Mustofa</p>
 <h1 class="display-6 fw-bold mb-3 fade-in-2" style="line-height:1.25;">Sistem Akademik, Monitoring Hafalan,<br class="d-none d-md-block"> dan Penilaian Karakter</h1>
 <p class="mx-auto mb-4 fade-in-2" style="max-width:620px;color:#fef3c7;font-size:1.02rem;">Sistem informasi berbasis web untuk mengelola data akademik, monitoring hafalan, dan penilaian karakter siswa.</p>
 <div class="d-flex flex-wrap gap-3 justify-content-center fade-in-3">
@@ -73,10 +73,10 @@ Al-Mustofa
 <div class="row align-items-center g-4">
 <div class="col-12 col-md-6">
 <h2 class="h5 fw-bold mb-2" style="color:#1f2937;">Tentang Yayasan</h2>
-<p class="small text-muted mb-0">Yayasan Islam Al-Mustofa berkomitmen memberikan pendidikan Islam terpadu yang mengintegrasikan akademik, tahfidz, dan pembentukan karakter untuk mencetak generasi berakhlak mulia.</p>
+<p class="small text-muted mb-0">SDIT Al-Mustofa berkomitmen memberikan pendidikan Islam terpadu yang mengintegrasikan akademik, tahfidz, dan pembentukan karakter untuk mencetak generasi berakhlak mulia.</p>
 </div>
 <div class="col-12 col-md-6 text-md-end">
-<span class="badge rounded-pill px-3 py-2" style="background:#fef3c7;color:#92400e;border:1px solid #fde68a;"><i class="bi bi-mortarboard me-1"></i> SD Islam Al-Mustofa</span>
+<span class="badge rounded-pill px-3 py-2" style="background:#fef3c7;color:#92400e;border:1px solid #fde68a;"><i class="bi bi-mortarboard me-1"></i> SDIT Al-Mustofa</span>
 </div>
 </div>
 </div>
@@ -119,7 +119,7 @@ Al-Mustofa
 <div class="container">
 <div class="row g-4">
 <div class="col-12 col-md-4">
-<h6 class="fw-bold mb-2" style="font-family:'Poppins',sans-serif;">Al-Mustofa</h6>
+<h6 class="fw-bold mb-2" style="font-family:'Poppins',sans-serif;">SDIT Al-Mustofa</h6>
 <p class="small mb-0" style="color:#fde68a;">Sistem Akademik, Monitoring Hafalan, dan Penilaian Karakter.</p>
 </div>
 <div class="col-12 col-md-4">
@@ -140,7 +140,7 @@ Al-Mustofa
 </div>
 </div>
 <hr class="my-3" style="border-color:rgba(255,255,255,.2)">
-<p class="text-center small mb-0" style="color:#fde68a;">© 2026 Yayasan Islam Al-Mustofa. All rights reserved.</p>
+<p class="text-center small mb-0" style="color:#fde68a;">© 2026 SDIT Al-Mustofa. All rights reserved.</p>
 </div>
 </footer>
 

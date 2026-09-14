@@ -4,7 +4,7 @@
 <div class="w-100 bg-white rounded-3 shadow" style="max-width:400px;box-shadow:0 8px 30px rgba(0,0,0,.08);padding:2rem;">
 <div class="text-center mb-4">
 <div class="mx-auto mb-3 d-flex align-items-center justify-content-center rounded-3" style="width:60px;height:60px;background:#f59e0b;color:#fff;font-size:28px;"><i class="bi bi-mortarboard-fill" style="line-height:1;"></i></div>
-<h1 class="h5 fw-bold mb-1" style="font-family:'Poppins',sans-serif;">Yayasan Islam Al-Mustofa</h1>
+<h1 class="h5 fw-bold mb-1" style="font-family:'Poppins',sans-serif;">SDIT Al-Mustofa</h1>
 <p class="small text-muted mb-0">Sistem Akademik</p>
 </div>
 @if($errors->any())<div class="alert alert-danger small py-2 mb-3">{{ $errors->first() }}</div>@endif

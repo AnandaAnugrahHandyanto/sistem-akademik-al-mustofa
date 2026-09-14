@@ -1,11 +1,13 @@
 <?php
 use App\Http\Controllers\Admin\GuruController;
 use App\Http\Controllers\Admin\KelasController;
+use App\Http\Controllers\Admin\LaporanController;
 use App\Http\Controllers\Admin\MataPelajaranController;
 use App\Http\Controllers\Admin\SiswaController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\Guru\HafalanController as GuruHafalanController;
 use App\Http\Controllers\Guru\KarakterController as GuruKarakterController;
 use App\Http\Controllers\Guru\NilaiController as GuruNilaiController;
@@ -28,7 +30,15 @@ Route::middleware(['auth', 'no-cache'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    // Settings — semua role
+    Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
+    Route::post('/settings/password', [SettingsController::class, 'updatePassword'])->name('settings.password');
+    Route::delete('/settings/sessions/others', [SettingsController::class, 'destroyOtherSessions'])->name('settings.sessions.others.destroy');
+    Route::delete('/settings/sessions/{id}', [SettingsController::class, 'destroySession'])->name('settings.sessions.destroy');
+
     Route::middleware('role:admin')->prefix('admin')->name('admin.')->group(function () {
+        Route::get('laporan', [LaporanController::class, 'index'])->name('laporan.index');
+        Route::get('laporan/cetak', [LaporanController::class, 'cetak'])->name('laporan.cetak');
         Route::resource('siswa', SiswaController::class);
         Route::resource('guru', GuruController::class);
         Route::resource('kelas', KelasController::class);

@@ -6,6 +6,6 @@
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 <div class="bg-white rounded shadow p-4 text-center text-sm">Progress Nilai</div><div class="bg-white rounded shadow p-4 text-center text-sm">Progress Hafalan</div>
 </div>
-<p class="text-xs text-gray-400 mt-6">Role: {{ auth()->user()->role }} — Yayasan Islam Al-Mustofa</p>
+<p class="text-xs text-gray-400 mt-6">Role: {{ auth()->user()->role }} — SDIT Al-Mustofa</p>
 </div>
 @endsection
