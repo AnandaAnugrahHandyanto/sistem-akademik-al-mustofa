@@ -22,10 +22,20 @@ class HafalanController extends Controller
             'siswa_id'=>'required|exists:siswas,id',
             'jenis_hafalan'=>'required|in:surat_pendek,doa,hadis',
             'surat'=>'required|string|max:100',
+            'ayat_mulai'=>'nullable|integer|min:1',
+            'ayat_selesai'=>'nullable|integer|min:1|gte:ayat_mulai',
+            'total_ayat'=>'nullable|integer|min:1',
+            'status'=>'nullable|in:baru,ulang,lulus',
             'progress'=>'required|integer|min:0|max:100',
             'tanggal'=>'required|date',
             'audio'=>'nullable|file|mimes:mp3,wav,m4a,ogg|max:5120',
         ]);
+        // auto-calc progress jika ayat range + total terisi
+        if($r->filled('ayat_mulai') && $r->filled('ayat_selesai') && $r->filled('total_ayat')){
+            $calc=Hafalan::calcProgress((int)$r->ayat_mulai,(int)$r->ayat_selesai,(int)$r->total_ayat);
+            if($calc!==null) $v['progress']=$calc;
+        }
+        $v['status']=$r->input('status','baru');
         if($r->hasFile('audio')){
             $v['audio']=$r->file('audio')->store('hafalan','public');
         }
@@ -38,10 +48,19 @@ class HafalanController extends Controller
             'siswa_id'=>'required|exists:siswas,id',
             'jenis_hafalan'=>'required|in:surat_pendek,doa,hadis',
             'surat'=>'required|string|max:100',
+            'ayat_mulai'=>'nullable|integer|min:1',
+            'ayat_selesai'=>'nullable|integer|min:1|gte:ayat_mulai',
+            'total_ayat'=>'nullable|integer|min:1',
+            'status'=>'nullable|in:baru,ulang,lulus',
             'progress'=>'required|integer|min:0|max:100',
             'tanggal'=>'required|date',
             'audio'=>'nullable|file|mimes:mp3,wav,m4a,ogg|max:5120',
         ]);
+        if($r->filled('ayat_mulai') && $r->filled('ayat_selesai') && $r->filled('total_ayat')){
+            $calc=Hafalan::calcProgress((int)$r->ayat_mulai,(int)$r->ayat_selesai,(int)$r->total_ayat);
+            if($calc!==null) $v['progress']=$calc;
+        }
+        $v['status']=$r->input('status','baru');
         if($r->hasFile('audio')){
             if($hafalan->audio) Storage::disk('public')->delete($hafalan->audio);
             $v['audio']=$r->file('audio')->store('hafalan','public');
